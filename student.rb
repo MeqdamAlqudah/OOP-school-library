@@ -1,8 +1,8 @@
 require('./school_library_people')
 
 class Student < Person
-  def initialize(classroom,age, name = 'Unknown')
-    super(age,name)
+  def initialize(classroom, age, name = 'Unknown')
+    super(age, name)
     @classroom = classroom
   end
 
@@ -11,5 +11,5 @@ class Student < Person
   end
 end
 
-student = Student.new("A",12,"Zaid")
+student = Student.new('A', 12, 'Zaid')
 puts student.name
