@@ -6,16 +6,18 @@ class Person
     @name = name
     @age = age
     @parent_permission = parent_permission
-    @id = 1
+    @id = Random.rand(1..1000)
   end
+
+  def can_use_services?
+    is_of_age? || @parent_permission
+  end
+
+  private
 
   # rubocop:disable Naming/PredicateName
   def is_of_age?
-    @age > 18
+    @age >= 18
   end
   # rubocop:enable Naming/PredicateName
-  private :is_of_age?
-  def can_use_services?
-    is_of_age? || @parent_permission ? true : false
-  end
 end
