@@ -1,15 +1,13 @@
-class Corrector 
-  def correct_name (name)
+class Corrector
+  def correct_name(name)
     name[0] = name[0].upcase
-    if name.length > 10
-      name = name.slice(0...11)
-    end
-    return name
+    name = name.slice(0...11) if name.length > 10
+    name
   end
 end
 
 class Person
-  attr_reader :id,:name
+  attr_reader :id
   attr_accessor :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -23,11 +21,12 @@ class Person
   def can_use_services?
     is_of_age? || @parent_permission
   end
+
   def validate_name
-   @name = @corrector.correct_name(@name)
-   return @name
+    @name = @corrector.correct_name(@name)
+    @name
   end
-  
+
   private
 
   # rubocop:disable Naming/PredicateName
@@ -37,9 +36,8 @@ class Person
   # rubocop:enable Naming/PredicateName
 end
 
-person = Person.new(22,'meqdam')
+person = Person.new(22, 'meqdam')
 puts person.validate_name
 
-person2 = Person.new(13,'meq fdjalljjjljlkljljljlkjlkjkljj')
+person2 = Person.new(13, 'meq fdjalljjjljlkljljljlkjlkjkljj')
 puts person2.validate_name
-
