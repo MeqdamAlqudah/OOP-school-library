@@ -72,3 +72,13 @@ puts person.validate_name
 
 person2 = Person.new(13, 'meq fdjalljjjljlkljljljlkjlkjkljj')
 puts person2.validate_name
+
+book = Book.new('The Coalition Years', 'Pranab Mukherjee')
+
+rent = Rental.new('3/4/2022', person, book)
+puts 'Book rentals: '
+puts book.rentals
+puts 'Person rentals'
+puts person.rentals
+puts 'rent date'
+puts rent.date
