@@ -16,11 +16,10 @@ class Person
     @parent_permission = parent_permission
     @id = Random.rand(1..1000)
     @corrector = Corrector.new
-    @rentals = []
   end
 
-  def add_rental(_rental)
-    @rentals.push(rentals)
+  def add_rental(date, book)
+    Rental.new(date, self, book)
   end
 
   def can_use_services?
@@ -48,11 +47,11 @@ class Book
   def initialize(title, author)
     @title = title
     @author = author
-    @rentals = []
   end
 
-  def add_rental(rental)
-    @rentals.push(rental)
+  def add_rental(date, person)
+    puts self
+    Rental.new(date, person, self)
   end
 end
 
@@ -82,3 +81,4 @@ puts 'Person rentals'
 puts person.rentals
 puts 'rent date'
 puts rent.date
+person.add_rental
