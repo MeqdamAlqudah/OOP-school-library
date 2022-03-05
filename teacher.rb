@@ -10,7 +10,3 @@ class Teacher < Person
     true
   end
 end
-
-teacher = Teacher.new('Mathematics', 22)
-
-puts teacher.name

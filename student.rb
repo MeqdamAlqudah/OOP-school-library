@@ -18,10 +18,12 @@ end
 class Student < Person
   attr_accessor :classroom
 
-  def initialize(classroom, age, name = 'Unknown')
-    super(age, name)
+  # rubocop:disable Style/OptionalBooleanParameter
+  def initialize(classroom, age, name = 'Unknown', permission = true)
+    super(age, name, permission)
     @classroom = classroom
   end
+  # rubocop:enable Style/OptionalBooleanParameter
 
   def add_to_classroom(classroom)
     @classroom = classroom
@@ -32,6 +34,3 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 end
-
-student = Student.new('A', 12, 'Zaid')
-puts student.name
