@@ -115,7 +115,7 @@ while flag
     end
 
   when '7'
-    flag = false
+    flag = true
   else
     puts 'Please enter valid input '
   end
