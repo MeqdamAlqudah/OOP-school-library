@@ -1,3 +1,5 @@
+require 'pry'
+
 require('./student')
 require('./teacher')
 puts "\nWelcome to School Library App!\n"
