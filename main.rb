@@ -1,3 +1,5 @@
+require 'pry'
+
 require('./student')
 require('./teacher')
 puts "\nWelcome to School Library App!\n"
@@ -115,7 +117,7 @@ while flag
     end
 
   when '7'
-    flag = true
+    flag = false
   else
     puts 'Please enter valid input '
   end
